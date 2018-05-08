@@ -67,7 +67,7 @@
 		qcom,id = <0>;
 		qcom,chipid = <0x05000600>;
 
-		qcom,initial-pwrlevel = <6>;
+		qcom,initial-pwrlevel = <7>;
 
 		qcom,idle-timeout = <80>; //msecs
 		qcom,deep-nap-timeout = <100>; //msecs
@@ -221,7 +221,7 @@
 				qcom,bus-max = <4>;
 			};
 
-		       /* Min SVS */
+		       /* Lowest SVS */
 			qcom,gpu-pwrlevel@6 {
 				reg = <6>;
 				qcom,gpu-freq = <133300000>;
@@ -229,9 +229,19 @@
 				qcom,bus-min = <1>;
 				qcom,bus-max = <4>;
 			};
-			/* XO */
+
+		       /* Min SVS */
 			qcom,gpu-pwrlevel@7 {
 				reg = <7>;
+				qcom,gpu-freq = <50000000>;
+				qcom,bus-freq = <1>;
+				qcom,bus-min = <1>;
+				qcom,bus-max = <4>;
+			};
+
+			/* XO */
+			qcom,gpu-pwrlevel@8 {
+				reg = <8>;
 				qcom,gpu-freq = <19200000>;
 				qcom,bus-freq = <0>;
 				qcom,bus-min = <0>;
